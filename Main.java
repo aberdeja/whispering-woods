@@ -17,7 +17,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Inventory inv = new Inventory();
 
-        // --- Collect basic character info ---
+
+        //--- Collect basic character info ---
         System.out.print("Enter your character's name: ");
         String name = in.nextLine();
 
@@ -62,7 +63,7 @@ public class Main {
         int totTime = 0;
         int userMin = 0;
 
-        // --- Prologue paragraph (≥ 5 sentences using ≥ 5 variables) ---
+        //--- Prologue paragraph (≥ 5 sentences using ≥ 5 variables) ---
         System.out.println();
         System.out.println("~ ~ ~ Adventure Prologue ~ ~ ~");
         System.out.println(name + " set out at dawn, " + proPossAdj + " pack light and hopes high.");
@@ -75,8 +76,8 @@ public class Main {
                 + " walked on without looking back.");
         // --- 2 paragraphs, 5 - 7 sentences ---
 
-        // (You will add TWO more paragraphs below for your submission.)
-        // TIP: Use more variables to store place names, items, stats, etc.
+        //(You will add TWO more paragraphs below for your submission.)
+        //TIP: Use more variables to store place names, items, stats, etc.
 
         System.out.print("As " + name + " approached the entrance to the Whispering Woods, " + proSubj + " reached into " + proPossAdj + " bag.");
         System.out.print(" From within " + proPossAdj + " " + container + " " + proSubj + " produced a " + lightSource + ", which helped to light the path ahead, as " 
@@ -125,6 +126,18 @@ public class Main {
         String[] inventoryContents = new String[5]; // create an array to hold inventory items
         Inventory inv = new Inventory(inventoryContents);
         inv.inventoryItems();
+
+        System.out.println(" Having taken stock of " + proPossAdj + " belongings, " + name + " felt a renewed sense of determination, ready to face whatever challenges may lay ahead.");
+        System.out.print(" With one more glance at the clearing, " + proSubj + " hoisted " + proPossAdj + container + " onto " + proPossAdj + " back and set out once more into the Whispering Woods.");
+        System.out.print(" Although the night before things had been uncertain, " + name + " felt the light of day brought with it a new sense of purpose.");
+        System.out.print(" Thus, " + proSubj + " set off into the woods, eager to return home with " + proPossAdj + " gathered " + veg + " and a silly story to tell any who might ask.");
+        System.out.print(" After all, not many could claim to have spent a night in the Whispering Woods and lived to tell the tale. It was a thought that " + name + " tried not to dwell on too much as " 
+        + proSubj + " made " + proPossAdj + " way back through the trees, sharp eyes keeping a look out for any sign of movement in the underbrush.");
+        System.out.print(" Each step was a little more uneasy than the last, but " + name + " pressed on, determined to make it back to the safety of " + proSubj + " home.");
+        System.out.print( " " + proSubj + " continued deeper into the woods, the path ahead growing darker and more foreboding with each passing hour.");
+        System.out.print(" Eventually, " + proSubj + " came across a fork in the path, forcing " + proObj + " to make a choice: should " + proSubj + " go left or right?");
+
+        character.whichOne(in.next().toLowerCase());
 
       
         
