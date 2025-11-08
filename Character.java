@@ -72,6 +72,18 @@ public void choosenOne(String choice, int timeVal, int hours, int minVal) {
         }
 }
 
+public void whichOne(string choice) {
+    if (choice.equals("right")) {
+        System.out.println("Choosing the right path, " + name + " soon found the edge of a clearing, wherein " + proSubj + " came across a familiar battered signpost, clearly marking the way back to town.");
+        System.out.print("It was with great relief that " + proSubj + " followed the sign, eventually making it back to the safety of home.");
+    } else if (choice.equals("left")) {
+        System.out.println("Choosing the left path, " + name + " soon found " + proPossAdj + " way deeper into the heart of the Whispering Woods.");
+    } else {
+        System.out.print("Please enter left or right");
+        }
+    }
+}
+
 
     
 }
