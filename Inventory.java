@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Inventory {
     private String[] array = new String[5];
     private int[] arrayVals = new int[5];
@@ -6,14 +8,24 @@ public class Inventory {
         this.array = array;
     }
 
+    /**
+     * Read counts for each inventory slot from standard input.
+     * This fixes the original loop (which broke after first read).
+     */
     public void countInventory() {
         Scanner in = new Scanner(System.in);
-        int i;
-        int num;
-        for (i = 0; i < arrayVals.length; ++i) {
-            num = in.nextInt(); // read each item and store it in the array
-            System.out.println("You have added " + num + " to your inventory.");
-            break;
+        for (int i = 0; i < arrayVals.length; i++) {
+            System.out.print("Enter count for slot " + i + ": ");
+            if (in.hasNextInt()) {
+                int num = in.nextInt(); // read each item and store it in the array
+                arrayVals[i] = num;
+                System.out.println("You have added " + num + " to your inventory slot " + i + ".");
+            } else {
+                // If non-integer input, consume and treat as 0
+                in.next();
+                arrayVals[i] = 0;
+                System.out.println("Invalid input, set slot " + i + " to 0.");
+            }
         }
     }
 
@@ -28,5 +40,26 @@ public class Inventory {
         for (int k = 0; k < array.length; k++) { // loop through the array and print each item
             System.out.println("- " + array[k]);
         }
+    }
+
+    // Print the inventory items using recursion.
+    public void printInventoryRecursive() {
+        printInventoryRecursive(0);
+    }
+
+    private void printInventoryRecursive(int index) {
+        if (index >= array.length) return; // base case
+        System.out.println("- " + array[index]);
+        printInventoryRecursive(index + 1); // recursive case
+    }
+
+    // Compute total quantity stored in arrayVals using recursion.
+    public int totalQuantityRecursive() {
+        return totalQuantityRecursive(0);
+    }
+
+    private int totalQuantityRecursive(int index) {
+        if (index >= arrayVals.length) return 0; // base case
+        return arrayVals[index] + totalQuantityRecursive(index + 1); // recursive case
     }
 }

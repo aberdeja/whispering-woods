@@ -15,7 +15,6 @@ public class Main {
         
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Inventory inv = new Inventory();
 
 
         //--- Collect basic character info ---
@@ -116,7 +115,7 @@ public class Main {
         System.out.println(" How many minutes has it been since " + name + " entered the woods?");
         totTime = in.nextInt();
 
-        character.choosenOne(in.next().toLowerCase(), totTime, hours, userMin);
+        Character.choosenOne(in.next().toLowerCase(), totTime, hours, userMin);
 
         System.out.println(" The next morning, " + name + " awoke to the sound of birds chirping, and dim light filtering through the thick canopy of trees.");
         System.out.print(" Stretching " + proPossAdj + " arms, " + proSubj + " took a moment to gather " + proReflex + " as " + proSubj + " prepared to continue " + proPossAdj + " journey.");
@@ -137,7 +136,20 @@ public class Main {
         System.out.print( " " + proSubj + " continued deeper into the woods, the path ahead growing darker and more foreboding with each passing hour.");
         System.out.print(" Eventually, " + proSubj + " came across a fork in the path, forcing " + proObj + " to make a choice: should " + proSubj + " go left or right?");
 
-        character.whichOne(in.next().toLowerCase());
+        Character.whichOne(in.next().toLowerCase());
+
+        System.out.println("As the feeling of being watched persisted, " + name + " kept an eye out for any sort of movement, but the further " + proSubj +
+        " ventured, the more isolated " + proSubj + " felt. For all intents and purposes, the forest seemed almost empty, despite the unnatural whispers that followed " + proObj +
+        ". In fact, there had been no sign of any other living creatures since " + proSubj + " had encountered the bunny in the mushroom grove.");
+        System.out.print(" Even the birds and insects were silent, as if the entire forest was holding its breath. It made " + name + " all the more anxious to find a way home.");
+        System.out.print(" Hours seemed to stretch into an eternity as " + proSubj + " navigated the labyrinthine paths of the Whispering Woods. The foliage seemed to grow denser and more difficult to traverse as " + proSubj +
+        " pressed forward, each step taking a little more effort than the last. Then, suddenly, " + name + " found " + proReflex + " stumbling into a clearing.");
+        System.out.print(" It was a rather large clearing, with sunlight streaming down through a break in the canopy above. However, what caught " + proPossAdj +
+        " attention was the sight of a decently sized pond in the center of the clearing, its surface shimmering in the dappled light. This was the first sign of water " + name +
+        " had seen since entering the woods, and " + proSubj + " felt a sudden wave of thirst wash over " + proObj + ". From here, the water appeared clear and crystaline, filtering out on both sides into a brook connected out into the trees at the forest edge.");
+        System.out.print(" Should " + name + " approach the pond or turn around? Enter approach or retreat: ");
+
+        Character.choices(in.next().toLowerCase());
 
       
         
