@@ -1,4 +1,9 @@
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+import java.util.Arrays;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Main {
         // method to count hours spent in the woods
@@ -12,9 +17,12 @@ public class Main {
         public static String chooseOne(String choice) {
                 return choice;
         }
+
+        public class LeftRightButtons {
         
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        
 
 
         //--- Collect basic character info ---
@@ -136,7 +144,39 @@ public class Main {
         System.out.print( " " + proSubj + " continued deeper into the woods, the path ahead growing darker and more foreboding with each passing hour.");
         System.out.print(" Eventually, " + proSubj + " came across a fork in the path, forcing " + proObj + " to make a choice: should " + proSubj + " go left or right?");
 
-        Character.whichOne(in.next().toLowerCase());
+         SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Left or Right?");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(300, 100);
+            frame.setLayout(new FlowLayout());
+
+            JButton leftButton = new JButton("Left");
+            JButton rightButton = new JButton("Right");
+
+            leftButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("You chose Left!");
+                    System.out.println("Venturing deeper into the Whispering Woods, " + name + " soon found " + proPossAdj + " surroundings growing darker and more foreboding.");
+            System.out.print(proSubj + " could hear strange whispers on the wind, and the feeling of being watched grew stronger with each step.");
+                }
+            });
+
+            rightButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("You chose Right!");
+                    System.out.print("Feeling wary but hopeful, " + name + " turned right at the fork in the path. Although the path was overgrown and difficult to navigate,");
+                System.out.println(" and it took some time, " + proSubj + " eventually made it back to the edge of the Whispering Woods. Emerging from the trees, " + proSubj + 
+            " were greeted by the sight of a familiar run down tavern, where " + proSubj + " knew " + proSubj + " would find some friendly faces and a warm meal.");
+                }
+            });
+
+            frame.add(leftButton);
+            frame.add(rightButton);
+
+            frame.setVisible(true);
+        });
 
         System.out.println("As the feeling of being watched persisted, " + name + " kept an eye out for any sort of movement, but the further " + proSubj +
         " ventured, the more isolated " + proSubj + " felt. For all intents and purposes, the forest seemed almost empty, despite the unnatural whispers that followed " + proObj +
@@ -151,8 +191,28 @@ public class Main {
 
         Character.choices(in.next().toLowerCase());
 
-      
+        System.out.println("For one panic-fueled moment, all " + name + " could do was flounder in place, heart hammering in " + proPossAdj + " chest as " + proSubj + " struggled.");
+        System.out.print(" Then, with a jolt, " + proSubj + " remembered the sword at " + proPossAdj + " back. Fumbling slightly, it took a moment, but " + proSubj + " finally managed to yank it free of the sheath.");
+        System.out.print(proSubj + " raised it above " + proPossAdj + " head, ready to cut " + proPossAdj + " way free, when the tentacle went tense and still, and that voice commanded, 'WAIT!'");
+        System.out.print(name + " froze, sword still raised, pausing to listen. After a moment, the voice spoke once more, 'YOU WOULD DARE HARM ME IN MY OWN WOODS?' The tentacle loosened around " + proPossAdj +
+        " arm slightly, before releasing " + proObj + " entirely. 'Who...who are you?' " + name + " stammered, scooting backwards in the grass to gain some distance from what appeared to be a giant talking octopus emerging from the pond.");
+        System.out.print(" 'I AM THE GUARDIAN OF THESE WOODS,' the creature boomed. 'FEW HAVE EVER LAID EYES UPON ME AND LIVED TO TELL THE TALE. WHY DO YOU DISTURB MY POND?' it demanded.");
+        System.out.print(" 'I just wanted something to drink,' " + name + " replied nervously. 'I didn't mean any harm. I'm lost and trying to find my way home.'");
+        System.out.print(" The guardian of the forest regarded " + proObj + " with what appeared to be a rather unimpressed look. 'LOST?' it echoed. 'MANY HAVE ENTERED THESE WOODS, FEW HAVE EVER LEFT. IF YOU WISH TO LEAVE, I CAN HELP YOU FOR A PRICE.'");
+        System.out.print(" " + name + " hesitated, unsure of what to do. Finally, " + proSubj + " nodded. 'What is the price?' " + proSubj + " asked, eager to find a way out of the Whispering Woods.");
+        System.out.print(" The guardian hummed thoughtfully, seeming to think it over for a moment. 'YOUR SOUL,' it finally declared. " + name + " stared at the creature in disbelief, mouth agape. Then, suddenly, a booming laugh filled the clearing.");
+        System.out.print(" 'YOU SHOULD SEE YOUR FACE!' the guardian exclaimed, clearly amused. 'I JEST! I DO NOT WANT YOUR SOUL, SILLY LITTLE MORTAL. INSTEAD, I WILL TAKE YOUR SWORD AS PAYMENT.'");
+        System.out.print(" " + name + " blinked, still trying to process everything that was happening. Finally, " + proSubj + " nodded slowly. 'Fine,' " + proSubj + " agreed, reluctantly placing the sword down in the grass before the pond.");
+        System.out.print(" The guardian reached out a tentacle, wrapping it around the sword and pulling it into the water with a splash. 'A WISE CHOICE,' it told " + proObj + ".");
+        System.out.print(" 'NOW, TURN AROUND AND CLOSE YOUR EYES. WHEN YOU OPEN THEM AGAIN, YOU WILL BE SAFE OUTSIDE THE WOODS.' " + name + " gave the creature a narrow-eyed look, uncertain if " + proObj + " should trust it.");
+        System.out.print(" However, with little other choice, " + proSubj + " did as instructed, turning around and closing " + proPossAdj + " eyes. After a few long moments of the creature mumbling to itself, " + name +
+        " was suddenly drenched in cold water, as if hit from behind with a wave. Opening " + proPossAdj + " eyes, " + proSubj + " spun back around to give the creature a piece of " + proPossAdj + " mind, only to find that the guardian of the woods was gone.");
+        System.out.print(" In fact, the entire clearing had disappeared. In its place was the edge of the Whispering Woods, sunlight streaming down from above. In the distance, " + name + 
+        "could see the familiar sight of a run-down tavern, smoke curling up from its chimney. " + proSubj + " had finally made it out.");
+        System.out.print(" With a relieved sigh, " + name + " began making " + proPossAdj + " way toward the tavern, eager to find some food and a warm bed to rest in after the rather harrowing experience in the Whispering Woods.");
         
+        in.close();
     }
+}
 }
 

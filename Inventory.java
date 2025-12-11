@@ -27,6 +27,7 @@ public class Inventory {
                 System.out.println("Invalid input, set slot " + i + " to 0.");
             }
         }
+        in.close();
     }
 
     public void inventoryItems() {

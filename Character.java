@@ -44,18 +44,18 @@ public void setProPossAdj(String proPossAdj) {
 }
 
 public void choosenOne(String choice, int timeVal, int hours, int minVal) {
-    if (chosen.equals("long")) {
+    if (choice.equals("long")) {
                 System.out.print("Although it takes some time, " + name + " slowly but surely traces " + proPossAdj + " steps back through the Whispering Woods.");
                 System.out.print(" Some time around noon that day, " + proSubj + " arrive back at " + proPossAdj + " little cottage, at the edge of town, where ");
                 System.out.print(proSubj + " immediately set to work on the mushroom stew.");
 
-        } else if (chosen.equals("short")) {
+        } else if (choice.equals("short")) {
                 System.out.print("Unfortunately, despite " + proPossAdj +
                 " apparent confidence, it isn't long before a once familiar shortcut becomes distinctly unfamiliar, and " + proSubj + " quickly realize that "
                 + proSubj + " are lost.");
                 System.out.print("The further " + proSubj + " ventured into the Whispering Woods, the more lost " + proSubj + " felt."
         + proSubj + " tried to turn around and backtrack, but it was no use. The shortcut meant to cut travel time in half had instead lengthened "
-        + proPossAdj + "journey. By the time " + proSubj + " finally found a clearing to stop in, it had been several hours since " + proObj + " had entered the woods.");
+        + proPossAdj + "journey. By the time " + proSubj + " finally found a clearing to stop in, it had been several hours since " + proSubj + " had entered the woods.");
     
 
                 Main.countHours(timeVal, hours, minVal);
@@ -70,7 +70,7 @@ public void choosenOne(String choice, int timeVal, int hours, int minVal) {
         }
 }
 
-public void whichOne(string choice) {
+public void whichOne(String choice) {
     if (choice.equals("right")) {
         System.out.println("Choosing the right path, " + name + " soon found the edge of a clearing, wherein " + proSubj + " came across a familiar battered signpost, clearly marking the way back to town.");
         System.out.print("It was with great relief that " + proSubj + " followed the sign, eventually making it back to the safety of home.");
@@ -91,10 +91,10 @@ public class Info extends Character {
     public void choosenOne(String choice, int timeVal, int hours, int minVal) {
         super.choosenOne(choice, timeVal, hours, minVal);
 
-        if(chosen.equals("long")) {
+        if(choice.equals("long")) {
             System.out.print(" After a lengthy but uneventful journey," + name + " finally emerged from the Whispering Woods. Relieved to finally be free of the woods, "
             + getProSubj() + " made " + proPossAdj + " way to the nearest tavern, eager to see some friendly faces and share the tale of " + proPossAdj + " brief adventure.");
-        } else if (chosen.equals("short")) {
+        } else if (choice.equals("short")) {
             System.out.print(" As night fell, " + name + "huddled beneath the thick canopy of the Whispering Woods, the sounds of nocturnal creatures echoing around "
                 + proPossAdj + " makeshift campsite. As the sun began to set, " + proSubj + " realized that " + proSubj + " would have to spend the night in the woods.");
                 System.out.print(" With no other options, " + name + " settled down for the night, hoping that morning would bring clarity, and a way out of the Whispering Woods.");
@@ -105,7 +105,7 @@ public class Info extends Character {
         }
 
     @Override
-    public void whichOne(string choice) {
+    public void whichOne(String choice) {
         super.whichOne(choice);
 
         if (choice.equals("right")) {
@@ -120,7 +120,7 @@ public class Info extends Character {
         }
 
     @Override
-    public void whichOne(string choice) {
+    public void whichOne(String choice) {
         super.whichOne(choice);
 
         if (choice.equals("right")) {
@@ -135,10 +135,9 @@ public class Info extends Character {
         }
         }
     
-    }
 
     public void choices(String choose) {
-        If (choose.equals("approach")) {
+        if (choose.equals("approach")) {
             System.out.println("Stumbling forward, " + name + " came to an abrupt halt before the pond, dropping to " + proPossAdj + " knees before it. " + proSubj + " pushed up " + proPossAdj +
                 " sleeves and reached out to touch the water's surface. As soon as their fingers made contact, a strange glow seemed to overtake the pond, and, before " + proSubj + 
                 " could react, a slimy tentacle shot out of the water, wrapping around " + proPossAdj + " wrist and holding tight, as a voice echoed throughout the clearing: ");

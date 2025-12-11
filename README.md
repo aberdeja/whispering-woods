@@ -16,11 +16,16 @@ Line 126 creates an array.<br>
 Line 127 creates an object.<br>
 Line 128 uses that object.<br>
 Line 140 calls the whichOne method.<br>
+Lines 147 through 179 contain a gui for a textbox and buttons.<br>
 
 # Character
 
 Lines 49 through 72 contain a branching if-else statement.<br>
 Lines 76 through 84 contain an if-else statemenet.<br>
+Lines 94 through 103 contain a branching if-else statement.<br>
+Lines 111 through 119 contain a branching if-else statement.<br>
+Lines 126 through 136 contain a branching if-else statement.<br>
+Lines 139 through 154 contain a branching if-else statement.<br>
 
 # Inventory
 
